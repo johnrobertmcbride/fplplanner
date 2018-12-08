@@ -2,11 +2,20 @@ import React from 'react'
 import Player from './Player'
 
 class Squad extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  renderSquadList = () => {
+    return (
+      this.props.squadList.map(player => <Player player={player} />)
+    )
+  }
+
   render() {
     return (
       <div>
-        <h1>Squad</h1>
-        <Player />
+        {this.renderSquadList()}
       </div>
     )
   }

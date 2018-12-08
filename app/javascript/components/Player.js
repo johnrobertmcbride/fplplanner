@@ -1,9 +1,15 @@
 import React from 'react'
 
 class Player extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
-      <h1>Player</h1>
+      <div>
+        <p>{this.props.player.name}</p>
+      </div>
     )
   }
 }
