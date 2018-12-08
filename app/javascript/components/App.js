@@ -1,88 +1,27 @@
 import React from 'react'
 import Squad from './Squad'
+import squadList from './squadList'
 
 class App extends React.Component {
-  squadList = {
-    GK: [
-      {
-        name: 'Fabianski',
-        position: 'GK',
-      }
-    ],
-    DEF: [
-      {
-        name: 'Alonso',
-        position: 'DEF',
-      },
-      {
-        name: 'Alexander-Arnold',
-        position: 'DEF',
-      },
-      {
-        name: 'Wan-Bisaka',
-        position: 'DEF',
-      }
-    ],
-    MID: [
-      {
-        name: 'Fraser',
-        position: 'MID',
-      },
-      {
-        name: 'Sterling',
-        position: 'MID',
-      },
-      {
-        name: 'Mooy',
-        position: 'MID',
-      },
-      {
-        name: 'Felipe Anderson',
-        position: 'MID',
-      }
-    ],
-    FWD: [
-      {
-        name: 'Kane',
-        position: 'FWD',
-      },
-      {
-        name: 'Wilson',
-        position: 'FWD',
-      },
-      {
-        name: 'Aubameyang',
-        position: 'FWD',
-      }
-    ],
-    GKBench: [
-      {
-        name: 'Hamer',
-        position: 'GK',
-      }
-    ],
-    Bench: [
-      {
-        name: 'Sigurdsson',
-        position: 'MID',
-      },
-      {
-        name: 'Bennett',
-        position: 'DEF',
-      },
-      {
-        name: 'Duffy',
-        position: 'DEF',
-      }
-    ]
+  constructor(props) {
+    super(props)
+    this.state = {
+      squadList1: squadList,
+      squadList2: squadList,
+      squadList3: squadList
+    }
+  }
+
+  handleSub = (squadList, player) => {
+
   }
 
   render() {
     return (
       <div class="app-container">
-        <Squad squadList={this.squadList}/>
-        <Squad squadList={this.squadList}/>
-        <Squad squadList={this.squadList}/>
+        <Squad squadList={this.state.squadList1}/>
+        <Squad squadList={this.state.squadList2}/>
+        <Squad squadList={this.state.squadList3}/>
       </div>
     )
   }
