@@ -2,23 +2,80 @@ import React from 'react'
 import Squad from './Squad'
 
 class App extends React.Component {
-  squadList = [
-    {name: 'Fabianski'},
-    {name: 'Hamer'},
-    {name: 'Alonso'},
-    {name: 'Alexander-Arnold'},
-    {name: 'Wan-Bisaka'},
-    {name: 'Bennett'},
-    {name: 'Duffy'},
-    {name: 'Fraser'},
-    {name: 'Sterling'},
-    {name: 'Mooy'},
-    {name: 'Felipe Anderson'},
-    {name: 'Sigurdsson'},
-    {name: 'Kane'},
-    {name: 'Wilson'},
-    {name: 'Aubameyang'}
-  ]
+  squadList = {
+    GK: [
+      {
+        name: 'Fabianski',
+        position: 'GK',
+      }
+    ],
+    DEF: [
+      {
+        name: 'Alonso',
+        position: 'DEF',
+      },
+      {
+        name: 'Alexander-Arnold',
+        position: 'DEF',
+      },
+      {
+        name: 'Wan-Bisaka',
+        position: 'DEF',
+      }
+    ],
+    MID: [
+      {
+        name: 'Fraser',
+        position: 'MID',
+      },
+      {
+        name: 'Sterling',
+        position: 'MID',
+      },
+      {
+        name: 'Mooy',
+        position: 'MID',
+      },
+      {
+        name: 'Felipe Anderson',
+        position: 'MID',
+      }
+    ],
+    FWD: [
+      {
+        name: 'Kane',
+        position: 'FWD',
+      },
+      {
+        name: 'Wilson',
+        position: 'FWD',
+      },
+      {
+        name: 'Aubameyang',
+        position: 'FWD',
+      }
+    ],
+    GKBench: [
+      {
+        name: 'Hamer',
+        position: 'GK',
+      }
+    ],
+    Bench: [
+      {
+        name: 'Sigurdsson',
+        position: 'MID',
+      },
+      {
+        name: 'Bennett',
+        position: 'DEF',
+      },
+      {
+        name: 'Duffy',
+        position: 'DEF',
+      }
+    ]
+  }
 
   render() {
     return (

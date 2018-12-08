@@ -8,7 +8,10 @@ class Player extends React.Component {
   render() {
     return (
       <div class="player-container">
+        <span>{this.props.player.position}</span>
+        <span>
         {this.props.player.name}
+        </span>
       </div>
     )
   }

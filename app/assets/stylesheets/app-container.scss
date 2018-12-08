@@ -3,9 +3,12 @@
   justify-content: space-around;
   > .squad-container {
     width: 30%;
-    > .player-container {
+    .player-container {
       border: 1px solid black;
       border-radius: 5%;
+    }
+    .bench-container {
+      margin-top: 20px;
     }
   }
 }
