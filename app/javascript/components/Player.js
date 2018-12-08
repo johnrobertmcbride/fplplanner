@@ -5,10 +5,6 @@ class Player extends React.Component {
     super(props)
   }
 
-  handleSub = () => {
-    alert(`Sub ${this.props.player.name}`)
-  }
-
   render() {
     return (
       <div class="player-container">
@@ -16,7 +12,7 @@ class Player extends React.Component {
         <span>
           {this.props.player.name}
         </span>
-        <span onClick={this.handleSub}>
+        <span onClick={() => this.props.handleSub(this.props.player)}>
           Sub
         </span>
       </div>

@@ -8,37 +8,37 @@ class Squad extends React.Component {
 
   renderGK = () => {
     return (
-      this.props.squadList.GK.map(player => <Player player={player} />)
+      this.props.squadList.GK.map(player => <Player player={player} handleSub={this.props.handleSub} />)
     )
   }
 
   renderDEF = () => {
     return (
-      this.props.squadList.DEF.map(player => <Player player={player} />)
+      this.props.squadList.DEF.map(player => <Player player={player} handleSub={this.props.handleSub} />)
     )
   }
 
   renderMID = () => {
     return (
-      this.props.squadList.MID.map(player => <Player player={player} />)
+      this.props.squadList.MID.map(player => <Player player={player} handleSub={this.props.handleSub} />)
     )
   }
 
   renderFWD = () => {
     return (
-      this.props.squadList.FWD.map(player => <Player player={player} />)
+      this.props.squadList.FWD.map(player => <Player player={player} handleSub={this.props.handleSub} />)
     )
   }
 
   renderGKBench = () => {
     return (
-      this.props.squadList.GKBench.map(player => <Player player={player} />)
+      this.props.squadList.GKBench.map(player => <Player player={player} handleSub={this.props.handleSub} />)
     )
   }
 
   renderBench = () => {
     return (
-      this.props.squadList.Bench.map(player => <Player player={player} />)
+      this.props.squadList.Bench.map(player => <Player player={player} handleSub={this.props.handleSub} />)
     )
   }
 

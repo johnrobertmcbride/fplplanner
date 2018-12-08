@@ -6,22 +6,24 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      squadList1: squadList,
-      squadList2: squadList,
-      squadList3: squadList
+      squadList: squadList,
+      substitute: []
     }
   }
 
-  handleSub = (squadList, player) => {
-
+  handleSub = (player) => {
+    if(this.state.substitute.length < 1) {
+      let substitute = this.state.substitute;
+      substitute.push(player);
+      this.setState({ substitute })
+    }
+    console.log(this.state.squadList[`${player.position}`])
   }
 
   render() {
     return (
       <div class="app-container">
-        <Squad squadList={this.state.squadList1}/>
-        <Squad squadList={this.state.squadList2}/>
-        <Squad squadList={this.state.squadList3}/>
+        <Squad squadList={this.state.squadList} handleSub={this.handleSub}/>
       </div>
     )
   }
