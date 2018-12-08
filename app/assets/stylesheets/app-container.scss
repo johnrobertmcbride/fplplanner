@@ -1,0 +1,11 @@
+.app-container {
+  display: flex;
+  justify-content: space-around;
+  > .squad-container {
+    width: 30%;
+    > .player-container {
+      border: 1px solid black;
+      border-radius: 5%;
+    }
+  }
+}

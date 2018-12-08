@@ -22,7 +22,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="app-container">
+        <Squad squadList={this.squadList}/>
+        <Squad squadList={this.squadList}/>
         <Squad squadList={this.squadList}/>
       </div>
     )

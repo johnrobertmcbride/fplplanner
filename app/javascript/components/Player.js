@@ -7,8 +7,8 @@ class Player extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>{this.props.player.name}</p>
+      <div class="player-container">
+        {this.props.player.name}
       </div>
     )
   }

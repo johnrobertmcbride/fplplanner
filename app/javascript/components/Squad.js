@@ -14,7 +14,7 @@ class Squad extends React.Component {
 
   render() {
     return (
-      <div>
+      <div class="squad-container">
         {this.renderSquadList()}
       </div>
     )
