@@ -2,73 +2,103 @@ const squadList = {
   GK: [
     {
       name: 'Fabianski',
-      position: 'GK',
+      type: 'GK',
+      currentGroup: 'GK',
+      selected: false
     }
   ],
   DEF: [
     {
       name: 'Alonso',
-      position: 'DEF',
+      type: 'DEF',
+      currentGroup: 'DEF',
+      selected: false
     },
     {
       name: 'Alexander-Arnold',
-      position: 'DEF',
+      type: 'DEF',
+      currentGroup: 'DEF',
+      selected: false
     },
     {
       name: 'Wan-Bisaka',
-      position: 'DEF',
+      type: 'DEF',
+      currentGroup: 'DEF',
+      selected: false
     }
   ],
   MID: [
     {
       name: 'Fraser',
-      position: 'MID',
+      type: 'MID',
+      currentGroup: 'MID',
+      selected: false
     },
     {
       name: 'Sterling',
-      position: 'MID',
+      type: 'MID',
+      currentGroup: 'MID',
+      selected: false
     },
     {
       name: 'Mooy',
-      position: 'MID',
+      type: 'MID',
+      currentGroup: 'MID',
+      selected: false
     },
     {
       name: 'Felipe Anderson',
-      position: 'MID',
+      type: 'MID',
+      currentGroup: 'MID',
+      selected: false
     }
   ],
   FWD: [
     {
       name: 'Kane',
-      position: 'FWD',
+      type: 'FWD',
+      currentGroup: 'FWD',
+      selected: false
     },
     {
       name: 'Wilson',
-      position: 'FWD',
+      type: 'FWD',
+      currentGroup: 'FWD',
+      selected: false
     },
     {
       name: 'Aubameyang',
-      position: 'FWD',
+      type: 'FWD',
+      currentGroup: 'FWD',
+      selected: false
     }
   ],
   GKBench: [
     {
       name: 'Hamer',
-      position: 'GK',
+      type: 'GK',
+      currentGroup: 'GKBench',
+      selected: false
     }
   ],
   Bench: [
     {
       name: 'Sigurdsson',
-      position: 'MID',
+      type: 'MID',
+      currentGroup: 'Bench',
+      selected: false
     },
     {
       name: 'Bennett',
-      position: 'DEF',
+      type: 'DEF',
+      currentGroup: 'Bench',
+      selected: false
     },
     {
       name: 'Duffy',
-      position: 'DEF',
+      type: 'DEF',
+      currentGroup: 'Bench',
+      selected: false
     }
   ]
 }

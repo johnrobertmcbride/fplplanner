@@ -2,13 +2,16 @@
   display: flex;
   justify-content: space-around;
   > .squad-container {
-    width: 30%;
+    width: 40%;
     .player-container {
       border: 1px solid black;
       border-radius: 5%;
     }
     .bench-container {
       margin-top: 20px;
+    }
+    .substitute-button {
+      float: right;
     }
   }
 }
