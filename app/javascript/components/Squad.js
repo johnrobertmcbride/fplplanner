@@ -8,37 +8,37 @@ class Squad extends React.Component {
 
   renderGK = () => {
     return (
-      this.props.squadList.GK.map(player => <Player player={player} handleSub={this.props.handleSub} />)
+      this.props.squadList.GK.map(player => <Player player={player} handleSub={this.props.handleGkSub} />)
     )
   }
 
   renderDEF = () => {
     return (
-      this.props.squadList.DEF.map(player => <Player player={player} handleSub={this.props.handleSub} />)
+      this.props.squadList.DEF.map(player => <Player player={player} handleSub={this.props.handleSubOut} />)
     )
   }
 
   renderMID = () => {
     return (
-      this.props.squadList.MID.map(player => <Player player={player} handleSub={this.props.handleSub} />)
+      this.props.squadList.MID.map(player => <Player player={player} handleSub={this.props.handleSubOut} />)
     )
   }
 
   renderFWD = () => {
     return (
-      this.props.squadList.FWD.map(player => <Player player={player} handleSub={this.props.handleSub} />)
+      this.props.squadList.FWD.map(player => <Player player={player} handleSub={this.props.handleSubOut} />)
     )
   }
 
   renderGKBench = () => {
     return (
-      this.props.squadList.GKBench.map(player => <Player player={player} handleSub={this.props.handleSub} />)
+      this.props.squadList.GKBench.map(player => <Player player={player} handleSub={this.props.handleGkSub} />)
     )
   }
 
   renderBench = () => {
     return (
-      this.props.squadList.Bench.map(player => <Player player={player} handleSub={this.props.handleSub} />)
+      this.props.squadList.Bench.map(player => <Player player={player} handleSub={this.props.handleSubIn} />)
     )
   }
 
