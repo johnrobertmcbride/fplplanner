@@ -69,8 +69,15 @@ class App extends React.Component {
       return
     }
     // if player constraints met swap players
-    alert("players would be swapped")
-    this.setState({ storedPlayer: {}, firstPress: true })
+    let squadList = this.state.squadList
+    let storedPlayer = this.state.storedPlayer
+    const storedPlayerOldGroup = storedPlayer.currentGroup
+    const playerOldGroup = player.currentGroup
+    player.currentGroup = storedPlayerOldGroup
+    storedPlayer.currentGroup = playerOldGroup
+    squadList[storedPlayerOldGroup][0] = player
+    squadList[playerOldGroup][0] = storedPlayer
+    this.setState({ squadList: squadList, storedPlayer: {}, firstPress: true })
   }
 
   render() {
