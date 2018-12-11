@@ -7,12 +7,12 @@ class Player extends React.Component {
 
   render() {
     return (
-      <div class="player-container">
+      <div className="player-container">
         <span>{this.props.player.position}</span>
         <span>
           {this.props.player.name}
         </span>
-        <span onClick={() => this.props.handleSub(this.props.player)}>
+        <span className="substitute-button" onClick={() => this.props.handleSub(this.props.player)}>
           Sub
         </span>
       </div>
