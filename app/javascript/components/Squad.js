@@ -10,7 +10,7 @@ class Squad extends React.Component {
     const startingPlayers = this.props.squadList.filter(squadPlayer => squadPlayer.starting)
     return (
       <div className="squad-group">
-        {startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player player={startingPlayer} handleSub={this.props.handleSubOut} />)}
+        {startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player player={startingPlayer} handleSub={this.props.handleSub} />)}
       </div>
     )
   }
@@ -18,7 +18,7 @@ class Squad extends React.Component {
   renderBenchPlayers = (index) => {
     const benchPlayers = this.props.squadList.filter(squadPlayer => !squadPlayer.starting)
     return (
-      benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer => <Player player={benchPlayer}/>)
+      benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer => <Player player={benchPlayer} handleSub={this.props.handleSub}/>)
     )
   }
 

@@ -10,21 +10,23 @@ class App extends React.Component {
     }
   }
 
-  handleSubOut = (clickedPlayer) => {
-    let squadList = this.state.squadList
-    const index = squadList.findIndex(function(player) {
-      return player.name == clickedPlayer.name
-    })
-    squadList[index].selected = true
-    this.setState({ squadList })
-  }
+  handleSub = (clickedPlayer) => {
+    let squadList = this.state.squadList;
+    const selectedPlayer = squadList.filter(player => player.selected)[0]
+    if(!selectedPlayer) {
+      alert("No selected player")
+      squadList[clickedPlayer.index].selected = true;
+      this.setState({ squadList });
+      return
+    }
+    if(selectedPlayer.index === clickedPlayer.index) {
+      squadList[selectedPlayer.index].selected = false;
+      this.setState({ squadList });
+      return
+    }
 
-  handleSubIn = (clickedPlayer) => {
-    alert(clickedPlayer)
-  }
 
-  handleGkSub = (clickedPlayer) => {
-    alert(clickedPlayer)
+
   }
 
   render() {
@@ -32,9 +34,7 @@ class App extends React.Component {
       <div className="app-container">
         <Squad
         squadList={this.state.squadList}
-        handleSubOut={this.handleSubOut}
-        handleSubIn={this.handleSubIn}
-        handleGkSub={this.handleGkSub}/>
+        handleSub={this.handleSub}/>
       </div>
     )
   }
