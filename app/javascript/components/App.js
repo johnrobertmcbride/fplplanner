@@ -29,8 +29,21 @@ class App extends React.Component {
       return
     }
     // if player constraints met swap players
-    alert("players would be swapped")
-    this.setState({ storedPlayer: {}, firstPress: true })
+    let squadList = this.state.squadList
+    let storedPlayer = this.state.storedPlayer
+    const storedPlayerIndex = squadList["Bench"].findIndex((element) => {
+      return element.name === storedPlayer.name;
+    });
+    const playerIndex = squadList[player.type].findIndex((element) => {
+      return element.name === player.name;
+    });
+
+    squadList["Bench"].splice(storedPlayerIndex, 1)
+    squadList["Bench"].push(player)
+    squadList[player.type].splice(playerIndex, 1)
+    squadList[storedPlayer.type].push(storedPlayer)
+
+    this.setState({ squadList: squadList, storedPlayer: {}, firstPress: true })
   }
 
   handleSubIn = (player) => {

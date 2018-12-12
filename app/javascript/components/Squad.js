@@ -46,10 +46,18 @@ class Squad extends React.Component {
   render() {
     return (
       <div className="squad-container">
-        {this.renderGK()}
-        {this.renderDEF()}
-        {this.renderMID()}
-        {this.renderFWD()}
+        <div className="squad-group">
+          {this.renderGK()}
+        </div>
+        <div className="squad-group">
+          {this.renderDEF()}
+        </div>
+        <div className="squad-group">
+          {this.renderMID()}
+        </div>
+        <div className="squad-group">
+          {this.renderFWD()}
+        </div>
         <div className="bench-container">
           {this.renderGKBench()}
           {this.renderBench()}
