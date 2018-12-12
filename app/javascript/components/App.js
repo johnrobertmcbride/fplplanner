@@ -11,7 +11,12 @@ class App extends React.Component {
   }
 
   handleSubOut = (clickedPlayer) => {
-    alert(clickedPlayer.name)
+    let squadList = this.state.squadList
+    const index = squadList.findIndex(function(player) {
+      return player.name == clickedPlayer.name
+    })
+    squadList[index].selected = true
+    this.setState({ squadList })
   }
 
   handleSubIn = (clickedPlayer) => {

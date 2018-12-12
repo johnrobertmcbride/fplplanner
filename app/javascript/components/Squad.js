@@ -11,7 +11,7 @@ class Squad extends React.Component {
   renderStartingPlayers = (group) => {
     return (
       <div className="squad-group">
-        {this.startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player player={startingPlayer}/>)}
+        {this.startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player player={startingPlayer} handleSub={this.props.handleSubOut} />)}
       </div>
     )
   }

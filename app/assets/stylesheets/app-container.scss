@@ -8,13 +8,20 @@
     }
     .player-container {
       border: 1px solid black;
-      border-radius: 5%;
+      border-radius: 5px;
+      padding: 5px;
     }
     .bench-container {
       margin-top: 40px;
     }
     .substitute-button {
       float: right;
+      border: 1px solid grey;
+      border-radius: 5px;
+      width: 10px;
+      &.selected {
+        background-color: yellow;
+      }
     }
   }
 }
