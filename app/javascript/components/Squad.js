@@ -5,62 +5,19 @@ class Squad extends React.Component {
   constructor(props) {
     super(props)
   }
+  startingPlayers = this.props.squadList.filter(squadPlayer => squadPlayer.starting)
 
-  renderGK = () => {
+  renderStartingPlayers = () => {
     return (
-      this.props.squadList.GK.map(player => <Player player={player} handleSub={this.props.handleGkSub} />)
+      this.startingPlayers.map(startingPlayer => <Player player={startingPlayer}/>)
     )
   }
-
-  renderDEF = () => {
-    return (
-      this.props.squadList.DEF.map(player => <Player player={player} handleSub={this.props.handleSubOut} />)
-    )
-  }
-
-  renderMID = () => {
-    return (
-      this.props.squadList.MID.map(player => <Player player={player} handleSub={this.props.handleSubOut} />)
-    )
-  }
-
-  renderFWD = () => {
-    return (
-      this.props.squadList.FWD.map(player => <Player player={player} handleSub={this.props.handleSubOut} />)
-    )
-  }
-
-  renderGKBench = () => {
-    return (
-      this.props.squadList.GKBench.map(player => <Player player={player} handleSub={this.props.handleGkSub} />)
-    )
-  }
-
-  renderBench = () => {
-    return (
-      this.props.squadList.Bench.map(player => <Player player={player} handleSub={this.props.handleSubIn} />)
-    )
-  }
-
 
   render() {
     return (
       <div className="squad-container">
         <div className="squad-group">
-          {this.renderGK()}
-        </div>
-        <div className="squad-group">
-          {this.renderDEF()}
-        </div>
-        <div className="squad-group">
-          {this.renderMID()}
-        </div>
-        <div className="squad-group">
-          {this.renderFWD()}
-        </div>
-        <div className="bench-container">
-          {this.renderGKBench()}
-          {this.renderBench()}
+          {this.renderStartingPlayers()}
         </div>
       </div>
     )
