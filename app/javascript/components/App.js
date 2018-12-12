@@ -65,9 +65,28 @@ class App extends React.Component {
     if(this.state.subStatus == "gkSub") {
       return
     }
-    // if player constraints met swap players
-    alert("players would be swapped")
-    this.setState({ storedPlayer: {}, firstPress: true })
+    // if stored player was a subOut
+    if(this.state.subStatus == "subOut") {
+      let squadList = this.state.squadList
+      let storedPlayer = this.state.storedPlayer
+      const storedPlayerIndex = squadList[storedPlayer.type].findIndex((element) => {
+        return element.name === storedPlayer.name;
+      });
+      const playerIndex = squadList["Bench"].findIndex((element) => {
+        return element.name === player.name;
+      });
+
+      squadList[storedPlayer.type].splice(storedPlayerIndex, 1)
+      squadList[player.type].push(player)
+      squadList["Bench"].splice(playerIndex, 1)
+      squadList["Bench"].push(storedPlayer)
+
+      if(squadList.DEF.length < 3 || squadList.FWD.length < 1) {
+        return
+      }
+
+      this.setState({ squadList: squadList, storedPlayer: {}, firstPress: true })
+    }
   }
 
   handleGkSub = (player) => {
