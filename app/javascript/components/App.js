@@ -43,6 +43,10 @@ class App extends React.Component {
     squadList[player.type].splice(playerIndex, 1)
     squadList[storedPlayer.type].push(storedPlayer)
 
+    if(squadList.DEF.length < 3 || squadList.FWD.length < 1) {
+      return
+    }
+
     this.setState({ squadList: squadList, storedPlayer: {}, firstPress: true })
   }
 
