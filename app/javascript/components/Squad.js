@@ -6,18 +6,34 @@ class Squad extends React.Component {
     super(props)
   }
   startingPlayers = this.props.squadList.filter(squadPlayer => squadPlayer.starting)
+  benchPlayers = this.props.squadList.filter(squadPlayer => !squadPlayer.starting)
 
-  renderStartingPlayers = () => {
+  renderStartingPlayers = (group) => {
     return (
-      this.startingPlayers.map(startingPlayer => <Player player={startingPlayer}/>)
+      <div className="squad-group">
+        {this.startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player player={startingPlayer}/>)}
+      </div>
+    )
+  }
+
+  renderBenchPlayers = (index) => {
+    return (
+      this.benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer => <Player player={benchPlayer}/>)
     )
   }
 
   render() {
     return (
       <div className="squad-container">
-        <div className="squad-group">
-          {this.renderStartingPlayers()}
+        {this.renderStartingPlayers("GK")}
+        {this.renderStartingPlayers("DEF")}
+        {this.renderStartingPlayers("MID")}
+        {this.renderStartingPlayers("FWD")}
+        <div className="squad-group bench-container">
+        {this.renderBenchPlayers(0)}
+        {this.renderBenchPlayers(1)}
+        {this.renderBenchPlayers(2)}
+        {this.renderBenchPlayers(3)}
         </div>
       </div>
     )
