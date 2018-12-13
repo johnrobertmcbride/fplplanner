@@ -1,12 +1,12 @@
 import React from 'react'
 import Squad from './Squad'
-import squadList2 from './squadList2'
+import squadList from './squadList'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      squadList: squadList2,
+      squadList: squadList,
     }
   }
 
