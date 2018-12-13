@@ -12,7 +12,7 @@ class Player extends React.Component {
         <span>
           {this.props.player.name}
         </span>
-        <span className={`substitute-button ${this.props.player.selected ? 'selected' : ''}`} onClick={() => this.props.handleSub(this.props.player)}>
+        <span className={`substitute-button ${this.props.player.selected ? 'selected' : ''}`} onClick={() => this.props.handleSub(this.props.squadIndex, this.props.player)}>
           S
         </span>
       </div>

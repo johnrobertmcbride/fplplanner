@@ -10,7 +10,7 @@ class Squad extends React.Component {
     const startingPlayers = this.props.squadList.filter(squadPlayer => squadPlayer.starting)
     return (
       <div className="squad-group">
-        {startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player player={startingPlayer} handleSub={this.props.handleSub} />)}
+        {startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player key={`squad${this.props.squadIndex}-player${startingPlayer.index}`} squadIndex={this.props.squadIndex} player={startingPlayer} handleSub={this.props.handleSub} />)}
       </div>
     )
   }
@@ -18,13 +18,14 @@ class Squad extends React.Component {
   renderBenchPlayers = (index) => {
     const benchPlayers = this.props.squadList.filter(squadPlayer => !squadPlayer.starting)
     return (
-      benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer => <Player player={benchPlayer} handleSub={this.props.handleSub}/>)
+      benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer => <Player key={`squad${this.props.squadIndex}-player${benchPlayer.index}`} squadIndex={this.props.squadIndex} player={benchPlayer} handleSub={this.props.handleSub}/>)
     )
   }
 
   render() {
     return (
       <div className="squad-container">
+        <h2>{`Gameweek ${this.props.squadIndex}`}</h2>
         {this.renderStartingPlayers("GK")}
         {this.renderStartingPlayers("DEF")}
         {this.renderStartingPlayers("MID")}

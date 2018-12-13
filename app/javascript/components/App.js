@@ -1,30 +1,36 @@
 import React from 'react'
 import Squad from './Squad'
 import squadList from './squadList'
+import squadList2 from './squadList2'
+
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      squadList: squadList,
+      squadLists: [
+        squadList,
+        squadList2,
+      ]
     }
   }
 
-  handleSub = (clickedPlayer) => {
+  handleSub = (squadIndex, clickedPlayer) => {
     this.setState(function (prevState) {
-      let squadList = prevState.squadList;
+      let squadLists = prevState.squadLists
+      let squadList = squadLists[squadIndex]
       const selectedPlayer = squadList.filter(player => player.selected)[0];
 
       // if no selected player
       if(!selectedPlayer) {
         squadList[clickedPlayer.index].selected = true;
-        return { squadList }
+        return { squadLists }
       }
 
       // if selectedPlayer reclicked
       if(clickedPlayer.index === selectedPlayer.index) {
         squadList[selectedPlayer.index].selected = false;
-        return { squadList }
+        return { squadLists }
       }
 
       // if both players are starting
@@ -76,7 +82,7 @@ class App extends React.Component {
         squadList[clickedPlayer.index].benchPosition = tempBenchPosition
 
         squadList[selectedPlayer.index].selected = false
-        return { squadList }
+        return { squadLists }
       }
     })
   }
@@ -85,7 +91,12 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <Squad
-        squadList={this.state.squadList}
+        squadIndex={0}
+        squadList={this.state.squadLists[0]}
+        handleSub={this.handleSub}/>
+        <Squad
+        squadIndex={1}
+        squadList={this.state.squadLists[1]}
         handleSub={this.handleSub}/>
       </div>
     )
