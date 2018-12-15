@@ -7,6 +7,8 @@ ruby '2.5.1'
 gem 'webpacker', '~> 3.5', '>= 3.5.5'
 # React for rails
 gem 'react-rails', '~> 2.4', '>= 2.4.7'
+# Lodash
+gem 'lodash-rails', '~> 4.17', '>= 4.17.10'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
