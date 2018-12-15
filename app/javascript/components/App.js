@@ -1,7 +1,7 @@
 import React from 'react'
 import Squad from './Squad'
 import squadList from './squadList'
-import squadList2 from './squadList2'
+import _ from 'lodash'
 
 
 class App extends React.Component {
@@ -9,8 +9,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       squadLists: [
-        squadList,
-        squadList2,
+        _.cloneDeep(squadList),
+        _.cloneDeep(squadList),
       ]
     }
   }
