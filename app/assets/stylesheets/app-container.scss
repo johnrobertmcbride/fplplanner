@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   > .squad-container {
-    width: 30%;
+    width: 45%;
     .squad-group {
       margin-bottom: 10px;
     }
@@ -11,17 +11,41 @@
       border-radius: 5px;
       padding: 5px;
     }
-    .bench-container {
-      margin-top: 40px;
+    .player-name {
+      width: 65px;
+      text-overflow: ellipsis;
     }
     .substitute-button {
-      float: right;
+      margin-left: 5px;
       border: 1px solid grey;
       border-radius: 5px;
       width: 10px;
+      float: right;
       &.selected {
         background-color: yellow;
       }
+    }
+    .fixture {
+      float: right;
+      &.-one {
+        background-color: blue;
+      }
+      &.-two {
+        background-color: lightblue;
+      }
+      &.-three {
+        background-color: whitesmoke;
+      }
+      &.-four {
+        background-color: lightcoral;
+      }
+      &.-five {
+        background-color: red;
+      }
+
+    }
+    .bench-container {
+      margin-top: 40px;
     }
   }
 }
