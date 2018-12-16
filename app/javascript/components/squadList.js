@@ -3,7 +3,7 @@ const squadList = [
     index: 0,
     name: 'Fabianski',
     type: 'GK',
-    currentGroup: 'GK',
+    team: 'WHU',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -12,7 +12,7 @@ const squadList = [
     index: 1,
     name: 'Hamer',
     type: 'GK',
-    currentGroup: 'GKBench',
+    team: 'HUD',
     starting: false,
     benchPosition: 0,
     selected: false
@@ -21,7 +21,7 @@ const squadList = [
     index: 2,
     name: 'Alonso',
     type: 'DEF',
-    currentGroup: 'DEF',
+    team: 'CHE',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -30,7 +30,7 @@ const squadList = [
     index: 3,
     name: 'Alexander-Arnold',
     type: 'DEF',
-    currentGroup: 'DEF',
+    team: 'LIV',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -39,7 +39,7 @@ const squadList = [
     index: 4,
     name: 'Wan-Bisaka',
     type: 'DEF',
-    currentGroup: 'DEF',
+    team: 'CRY',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -48,7 +48,7 @@ const squadList = [
     index: 5,
     name: 'Bennett',
     type: 'DEF',
-    currentGroup: 'Bench',
+    team: 'WOL',
     starting: false,
     benchPosition: 3,
     selected: false
@@ -57,7 +57,7 @@ const squadList = [
     index: 6,
     name: 'Duffy',
     type: 'DEF',
-    currentGroup: 'Bench',
+    team: 'BHA',
     starting: false,
     benchPosition: 2,
     selected: false
@@ -66,7 +66,7 @@ const squadList = [
     index: 7,
     name: 'Fraser',
     type: 'MID',
-    currentGroup: 'MID',
+    team: 'BOU',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -75,7 +75,7 @@ const squadList = [
     index: 8,
     name: 'Sterling',
     type: 'MID',
-    currentGroup: 'MID',
+    team: 'MCI',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -84,7 +84,7 @@ const squadList = [
     index: 9,
     name: 'Mooy',
     type: 'MID',
-    currentGroup: 'MID',
+    team: 'HUD',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -93,7 +93,7 @@ const squadList = [
     index: 10,
     name: 'Felipe Anderson',
     type: 'MID',
-    currentGroup: 'MID',
+    team: 'WHU',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -102,7 +102,7 @@ const squadList = [
     index: 11,
     name: 'Sigurdsson',
     type: 'MID',
-    currentGroup: 'Bench',
+    team: 'EVE',
     starting: false,
     benchPosition: 1,
     selected: false
@@ -111,7 +111,7 @@ const squadList = [
     index: 12,
     name: 'Kane',
     type: 'FWD',
-    currentGroup: 'FWD',
+    team: 'TOT',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -120,7 +120,7 @@ const squadList = [
     index: 13,
     name: 'Wilson',
     type: 'FWD',
-    currentGroup: 'FWD',
+    team: 'BOU',
     starting: true,
     benchPosition: 0,
     selected: false
@@ -129,7 +129,7 @@ const squadList = [
     index: 14,
     name: 'Aubameyang',
     type: 'FWD',
-    currentGroup: 'FWD',
+    team: 'ARS',
     starting: true,
     benchPosition: 0,
     selected: false

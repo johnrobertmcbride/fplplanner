@@ -6,11 +6,22 @@ class Squad extends React.Component {
     super(props)
   }
 
+  calculateFixture = (player) => {
+    return this.props.fixtures[player.team]
+  }
+
   renderStartingPlayers = (group) => {
     const startingPlayers = this.props.squadList.filter(squadPlayer => squadPlayer.starting)
     return (
       <div className="squad-group">
-        {startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer => <Player key={`squad${this.props.squadIndex}-player${startingPlayer.index}`} squadIndex={this.props.squadIndex} player={startingPlayer} handleSub={this.props.handleSub} />)}
+        {startingPlayers.filter(startingPlayer => startingPlayer.type === group).map(startingPlayer =>
+          <Player
+            key={`squad${this.props.squadIndex}-player${startingPlayer.index}`}
+            squadIndex={this.props.squadIndex}
+            player={startingPlayer} handleSub={this.props.handleSub}
+            fixture={this.calculateFixture(startingPlayer)}
+          />
+        )}
       </div>
     )
   }
@@ -18,7 +29,15 @@ class Squad extends React.Component {
   renderBenchPlayers = (index) => {
     const benchPlayers = this.props.squadList.filter(squadPlayer => !squadPlayer.starting)
     return (
-      benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer => <Player key={`squad${this.props.squadIndex}-player${benchPlayer.index}`} squadIndex={this.props.squadIndex} player={benchPlayer} handleSub={this.props.handleSub}/>)
+      benchPlayers.filter(benchPlayer => benchPlayer.benchPosition === index).map(benchPlayer =>
+        <Player
+          key={`squad${this.props.squadIndex}-player${benchPlayer.index}`}
+          squadIndex={this.props.squadIndex}
+          player={benchPlayer}
+          handleSub={this.props.handleSub}
+          fixture={this.calculateFixture(benchPlayer)}
+        />
+      )
     )
   }
 

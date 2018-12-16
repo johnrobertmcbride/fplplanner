@@ -4,8 +4,8 @@ class Player extends React.Component {
   constructor(props) {
     super(props)
   }
-  randomFixture = () => {
-    const num = Math.ceil(Math.random() * 5)
+  getFixDiff = () => {
+    const num = this.props.fixture.difficulty
     if(num == 1) {
       return "-one"
     } else if (num == 2) {
@@ -29,8 +29,8 @@ class Player extends React.Component {
         <span className={`substitute-button ${this.props.player.selected ? 'selected' : ''}`} onClick={() => this.props.handleSub(this.props.squadIndex, this.props.player)}>
           S
         </span>
-        <span className={`fixture ${this.randomFixture()}`}>
-          FIX
+        <span className={`fixture ${this.getFixDiff()}`}>
+          {this.props.fixture.team}
         </span>
       </div>
     )

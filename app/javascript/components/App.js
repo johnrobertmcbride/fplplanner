@@ -1,6 +1,7 @@
 import React from 'react'
 import Squad from './Squad'
 import squadList from './squadList'
+import fixtures from './fixtures.js'
 import _ from 'lodash'
 
 
@@ -11,7 +12,8 @@ class App extends React.Component {
       squadLists: [
         _.cloneDeep(squadList),
         _.cloneDeep(squadList),
-      ]
+      ],
+      fixtures: fixtures
     }
   }
 
@@ -68,11 +70,13 @@ class App extends React.Component {
         <Squad
         squadIndex={0}
         squadList={this.state.squadLists[0]}
-        handleSub={this.handleSub}/>
+        handleSub={this.handleSub}
+        fixtures={this.state.fixtures[0]}/>
         <Squad
         squadIndex={1}
         squadList={this.state.squadLists[1]}
-        handleSub={this.handleSub}/>
+        handleSub={this.handleSub}
+        fixtures={this.state.fixtures[1]}/>
       </div>
     )
   }
